@@ -1,0 +1,94 @@
+\documentclass{csuthesis}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   封面信息，可直接更改
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\csusetup{
+    titlezh = {共享单车调度回收问题的算法研究},
+    titleen = {Research on the Algorithm of Bike Repositioning and Recycling Problem},
+    thesistype = {硕士毕业论文},
+    degreetype = {专业学位},
+    author = {徐巍},
+    major = {物流工程},%
+    direction = {物流系统优化},%
+    supervisor = {张得志教授},%
+    collegename = {中南大学},%
+    collegeid = {10533},%
+    schoolname = {交通运输工程学院},%
+    debatedate = {\the\year 年 \the\month 月},%
+    udc = {519.85},%
+    classification = {F540.5},%
+    secret = {公开},%
+    printstyle = {print},%print: 打印 electron：电子版
+}
+
+\begin{document}
+	\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   学位原创性申明
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\input{body/flyleaf}
+	\input{body/preface}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   \frontpart用于标记正文之前的页眉样式
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+\frontpart
+	
+    \begin{AbstractZh}
+        这是中南大学的 \LaTeX 模板，相信\TeX er一定会感兴趣。摘要格式：中文宋体四号，英文Times new roman四号。
+        
+        该模板中设定了一些方便的命令，如使用$\backslash$totalfigures\{\}可以得到论文中图的数量，使用$\backslash$totaltables\{\}可以得到论文中表格的数量，使用$\backslash$totalcitations\{\}可以得到论文中参考文献的数量。
+        
+        图 \totalfigures{} 个, 表 \totaltables{} 个， 参考文献\totalcitations{} 篇。
+        
+        \KeywordsZh{铁矿石物流网络； 多模式运输； 需求不确定； 随机规划； 拉格朗日松弛}
+        
+    \end{AbstractZh}
+	
+    \begin{AbstractEn}
+        In this template, the font-style of English characters is set to Times new roman with size of 4.
+        
+        Besides, this template provides some useful command here to get the number of total figures, tables, and citations. For example, $\backslash$totalfigures\{\} is used for obtaining total figures, $\backslash$totaltables\{\} for total tables, $\backslash$totalcitations\{\} for total citations.
+        
+        Figure \totalfigures{}, table \totaltables{}, reference \totalcitations{}.
+        
+        \KeywordsEn{Iron ore logistics network; Multimodal transportation;  Uncertain demand; Stochastic programming; Lagrangian relaxation}
+        
+    \end{AbstractEn}
+	
+	\setcounter{tocdepth}{2}
+	\begin{spacing}{1.3}
+	\pdfbookmark[0]{目录}{toc}
+		\tableofcontents
+	\end{spacing}
+	\cleardoublepage
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   \frontpart用于标记正文的页眉样式
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainpart
+
+	\include{body/chapter1}
+	\include{body/chapter2}
+
+	
+	%=============================================== 参考文献
+	%	\pagebreak[4]
+	\markboth{参考文献}{参考文献}
+%    \nocite{*}
+    \bibliography{bibfile}\label{bib}
+	\addcontentsline{toc}{chapter}{参考文献}
+	\cleardoublepage
+	
+	%=============================================== 附录
+	\include{body/appendix}
+	%=============================================== 研究成果
+	\include{body/research}
+	%=============================================== 致谢
+	\include{body/acknowledges}
+	
+\end{document}

@@ -1,0 +1,80 @@
+
+\documentclass[coverwidth=210mm, coverheight=297mm, spinewidth=5mm, 12pt, bleedwidth=5mm]{bookcover}
+\usepackage[outline]{contour}
+\usepackage{ctex}
+
+\newbookcovercomponenttype{center rotate}{
+	\parbox[t][\partheight][c]{\partwidth}{
+		\begin{center}
+			\rotatebox[origin=c]{90}{#1}
+\end{center}}}
+
+\usepackage{multirow}	%跨多行
+\usepackage{multicol}   %跨多栏
+\usepackage{awesomebox}
+
+\usepackage{fontspec}
+%\usepackage{mathpazo,tgpagella}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+
+\definecolor{bgcolor}{RGB}{9,44,81}
+\definecolor{fgcolor}{RGB}{248,182,44}
+\color{fgcolor}
+\graphicspath{{figures}}
+\gdef\DebateDate{\zhdigits{\the\year} 年 \zhnumber{\the\month} 月}
+
+\begin{document}
+	\begin{bookcover}
+        \bookcovercomponent{color}{whole}{bgcolor}
+        
+        \bookcovercomponent{normal}{front}{
+            \vspace{16cm}
+            \centering
+            \includegraphics[width=12cm]{/csu/polar.png}
+        }
+    
+        \bookcovercomponent{normal}{back}{
+            \vspace{3cm}
+            \hspace{1.5cm}
+            \includegraphics[width=4cm]{/csu/name-zh-en.pdf}
+        }
+    
+        \bookcovercomponent{center}{back}{
+            \includegraphics[width=4cm]{/csu/logo-orange.pdf}\\[0.5cm]
+            \includegraphics[width=6cm]{/csu/style.png}
+        }
+        
+		\bookcovercomponent{normal}{front}{
+            \begin{center}
+                \vspace{4cm}
+                \includegraphics[width=10cm]{/csu/logo-name-zh-en.pdf}
+                \\[2cm]
+				\parbox{\textwidth-6cm}{\centering\heiti{\zihao{-2}硕士毕业论文}}\\[2cm]
+                \parbox{\textwidth-6cm}{\centering\heiti{\zihao{2}共享单车系统调度回收问题的算法研究}}\\[1cm]
+                \parbox{\textwidth-6cm}{\centering{\zihao{-2}Research on the Algorithm for Bike Repositioning and Recycling Problem in Bike-sharing System}}\\[4cm]
+
+                \begin{tabular}{m{4cm}<{\raggedright} m{3cm}<{\centering} m{3cm}<{\centering}}
+                    \zihao{3}{学科专业：}&\multicolumn{2}{c}{\zihao{3}{物流工程}}\\[1.5em]
+                    \zihao{3}{专业领域：}&\multicolumn{2}{c}{\zihao{3}{物流系统优化}}\\[1.5em]
+                    \zihao{3}{作者姓名：}&\multicolumn{2}{c}{\zihao{3}{徐巍}}\\[1.5em]
+                    \zihao{3}{指导教师：}&\multicolumn{2}{c}{\zihao{3}{张得志教授}}\\
+                \end{tabular}
+
+                \vspace{3cm}
+                \zihao{-3}{\DebateDate}
+            \end{center}}
+        
+		\bookcovercomponent{tikz}{whole}{
+            \fill (0,27.2)--(42.5,27.2)--(42.5,27.3)--(0,27.3);
+        }
+		
+		\bookcovercomponent{center}{spine}{
+			\kaishu{\zihao{4}{硕士毕业论文}
+			
+			\vspace{20em}
+			
+			\zihao{4}{中南大学}}
+		}
+	\end{bookcover}
+\end{document}
