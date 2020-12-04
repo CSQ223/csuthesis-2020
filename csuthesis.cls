@@ -212,7 +212,7 @@ citecolor=myblue,
 %% Redefine the style of title of chapter/section/subsection
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{titlesec}
-\titleformat{\chapter}{\centerlast\zihao{3}\heiti\bfseries}{第\,\thechapter\,章}{0.5em}{}[]
+\titleformat{\chapter}{\centerlast\zihao{3}\heiti}{第\,\thechapter\,章}{0.5em}{}[]
 \titleformat{\section}{\flushleft\zihao{4}\heiti}{\thesection}{0.5em}{}[]
 \titleformat{\subsection}{\flushleft\zihao{-4}\heiti}{\thesubsection}{0.5em}{}[]
 \titleformat{\subsubsection}{\flushleft\zihao{-4}}{\thesubsubsection}{0.5em}{}[]
@@ -368,7 +368,7 @@ citecolor=myblue,
 }
 
 \newenvironment{AbstractEn}{
-    \chapter*{\TitleEn}
+    \chapter*{\bfseries\TitleEn}
     \addcontentsline{toc}{chapter}{Abstract}
     \noindent\zihao{4}{\bf{Abstract：}}
 }{
