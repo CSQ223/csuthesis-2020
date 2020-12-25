@@ -237,7 +237,7 @@ citecolor=myblue,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Redefine the style of bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage{gbt7714}
+\RequirePackage[sort&compress]{gbt7714}
 \bibliographystyle{gbt7714-numerical}
 \RequirePackage{bibentry}
 \RequirePackage{doi}
