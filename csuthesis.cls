@@ -242,6 +242,9 @@ citecolor=myblue,
 \RequirePackage{bibentry}
 \RequirePackage{doi}
 \renewcommand{\doitext}{}
+\def\citeauthoryear#1{%
+    \citeauthor{#1} (\citeyear{#1})\cite{#1}
+}
 
 \setlength{\bibsep}{0.em}
 \nobibliography*
