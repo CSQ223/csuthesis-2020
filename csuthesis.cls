@@ -216,7 +216,7 @@ citecolor=myblue,
 \titleformat{\section}{\flushleft\zihao{4}\heiti}{\thesection}{0.5em}{}[]
 \titleformat{\subsection}{\flushleft\zihao{-4}\heiti}{\thesubsection}{0.5em}{}[]
 \titleformat{\subsubsection}{\flushleft\zihao{-4}}{\thesubsubsection}{0.5em}{}[]
-\titlespacing{\chapter}{0cm}{1em}{18pt}	%标题的边距
+\titlespacing{\chapter}{0cm}{-1em}{18pt}	%标题的边距
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Redefine the style of the tableofcontents
