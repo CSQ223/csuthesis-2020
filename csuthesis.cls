@@ -271,7 +271,7 @@ citecolor=myblue,
 \newcommand{\appendixs}{
     \appendix
     \titlespacing{\chapter}{0cm}{1em}{18pt}
-    \titleformat{\chapter}{\centering\zihao{-2}\heiti}{附录\ \thechapter}{0.5em}{}[]
+    \titleformat{\chapter}{\centering\zihao{3}\heiti}{附录\ \thechapter}{0.5em}{}[]
 }
 \makeatother
 
