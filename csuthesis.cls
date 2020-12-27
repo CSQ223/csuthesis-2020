@@ -181,7 +181,7 @@ citecolor=myblue,
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE,RO]{\zihao{-5} \ThesisType}
+\fancyhead[LE,RO]{\zihao{-5} \CollegeName\ThesisType}
 \fancyhead[RE]{\zihao{-5}\rightmark}
 \fancyhead[LO]{\zihao{-5}\leftmark}
 \fancyfoot[C]{\zihao{-5}\thepage}
@@ -207,6 +207,14 @@ citecolor=myblue,
     \secdef\@chapter\@schapter}
 \makeatother
 
+\makeatletter
+\let\stdchapter\chapter
+\renewcommand*\chapter{%
+    \@ifstar{\starchapter}{\@dblarg\nostarchapter}}
+\newcommand*\starchapter[1]{\titlespacing{\chapter}{0cm}{1em}{18pt}\stdchapter*{#1}
+}
+\def\nostarchapter[#1]#2{\titlespacing{\chapter}{0cm}{-1em}{18pt}\stdchapter[{#1}]{#2}}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Redefine the style of title of chapter/section/subsection
@@ -215,8 +223,9 @@ citecolor=myblue,
 \titleformat{\chapter}{\centerlast\zihao{3}\heiti}{第\,\thechapter\,章}{0.5em}{}[]
 \titleformat{\section}{\flushleft\zihao{4}\heiti}{\thesection}{0.5em}{}[]
 \titleformat{\subsection}{\flushleft\zihao{-4}\heiti}{\thesubsection}{0.5em}{}[]
-\titleformat{\subsubsection}{\flushleft\zihao{-4}}{\thesubsubsection}{0.5em}{}[]
-\titlespacing{\chapter}{0cm}{-1em}{18pt}	%标题的边距
+\titleformat{\subsubsection}{\flushleft\zihao{-4}\heiti}{\thesubsubsection}{0.5em}{}
+%\titlespacing{\chapter}{0cm}{-1em}{18pt}	%标题的边距
+%\titlespacing*{\chapter}{0cm}{-1cm}{18pt} %标题的边距
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Redefine the style of the tableofcontents
@@ -261,6 +270,7 @@ citecolor=myblue,
 \makeatletter
 \newcommand{\appendixs}{
     \appendix
+    \titlespacing{\chapter}{0cm}{1em}{18pt}
     \titleformat{\chapter}{\centering\zihao{-2}\heiti}{附录\ \thechapter}{0.5em}{}[]
 }
 \makeatother
