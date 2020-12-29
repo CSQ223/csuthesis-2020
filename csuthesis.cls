@@ -146,14 +146,14 @@ citecolor=myblue,
 \renewcommand{\thelisting}{\thechapter--\arabic{listing}}
 
 
-\newcommand{\tblref}[1]{\hypersetup{linkcolor=myblue}表~\ref{#1}}
-\newcommand{\figref}[1]{\hypersetup{linkcolor=myblue}图~\ref{#1}}
-\newcommand{\algref}[1]{\hypersetup{linkcolor=myblue}算法~\ref{#1}}
-\renewcommand{\eqref}[1]{\hypersetup{linkcolor=myblue}公式~(\ref{#1})}
-\newcommand{\eqsref}[2]{\hypersetup{linkcolor=myblue}公式~(\ref{#1})--公式(\ref{#2})}
-\newcommand{\conref}[1]{\hypersetup{linkcolor=myblue}约束~(\ref{#1})}
-\newcommand{\consref}[2]{\hypersetup{linkcolor=myblue}约束~(\ref{#1})--约束(\ref{#2})}
-\newcommand{\srcref}[1]{\hypersetup{linkcolor=myblue}源码~\ref{#1}}
+\newcommand{\tblref}[1]{\hypersetup{linkcolor=myblue}表~{\rm\ref{#1}}}
+\newcommand{\figref}[1]{\hypersetup{linkcolor=myblue}图~{\rm\ref{#1}}}
+\newcommand{\algref}[1]{\hypersetup{linkcolor=myblue}算法~{\rm\ref{#1}}}
+\renewcommand{\eqref}[1]{\hypersetup{linkcolor=myblue}公式~{\rm(\ref{#1})}}
+\newcommand{\eqsref}[2]{\hypersetup{linkcolor=myblue}公式~{\rm(\ref{#1})}—公式{\rm(\ref{#2})}}
+\newcommand{\conref}[1]{\hypersetup{linkcolor=myblue}约束~{\rm(\ref{#1})}}
+\newcommand{\consref}[2]{\hypersetup{linkcolor=myblue}约束~{\rm(\ref{#1})}—约束{\rm(\ref{#2})}}
+\newcommand{\srcref}[1]{\hypersetup{linkcolor=myblue}源码~{\rm\ref{#1}}}
 
 \setlength{\abovecaptionskip}{0.2em}
 \setlength{\belowcaptionskip}{0.2em}
@@ -314,41 +314,46 @@ citecolor=myblue,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{pdfpages}
 \def\maketitle{
+    \def\csu@print@maketitle{
+        \begin{titlepage}
+            \begin{center}
+                \ 
+                \vspace{3cm}
+                
+                \parbox{\textwidth}{\centering\heiti{\zihao{-2}\ThesisType}}\\[1cm]
+                \parbox{\textwidth}{\centering\heiti{\zihao{2}\TitleZh}}\\[1cm]
+                \parbox{\textwidth}{\centering{\zihao{-2}\TitleEn}}\\[3cm]
+                
+                \begin{tabular}{m{4cm}<{\raggedright} m{3cm}<{\centering} m{3cm}<{\centering}}
+                    \zihao{3}{学科专业：}&\multicolumn{2}{c}{\zihao{3}{\Major}}\\[1.5em]
+                    \zihao{3}{专业领域：}&\multicolumn{2}{c}{\zihao{3}{\Direction}}\\[1.5em]
+                    \zihao{3}{作者姓名：}&\multicolumn{2}{c}{\zihao{3}{\Author}}\\[1.5em]
+                    \zihao{3}{指导教师：}&\multicolumn{2}{c}{\zihao{3}{\Supervisor}}\\
+                    
+                \end{tabular}
+                
+                \vspace{2cm}
+                \zihao{-3}{\CollegeName\\\DebateDate}
+                
+            \end{center}
+            
+        \end{titlepage}
+        \cleardoublepage
+    }
+    
     \pdfbookmark[-1]{\TitleZh}{}	%生成论文书签
     \ifx\PrintStyle\printstyle%
+        \csu@print@maketitle
+    \else
         \IfFileExists{./bookcover.pdf}{
             \includepdf[fitpaper=true]{./bookcover.pdf}
         }{
             \csu@error{"Please run previously: make bookcover.pdf"}
         }
-    \else
-    \begin{titlepage}
-        \begin{center}
-            \ 
-            \vspace{3cm}
-            
-            \parbox{\textwidth}{\centering\heiti{\zihao{-2}\ThesisType}}\\[1cm]
-            \parbox{\textwidth}{\centering\heiti{\zihao{2}\TitleZh}}\\[1cm]
-            \parbox{\textwidth}{\centering{\zihao{-2}\TitleEn}}\\[3cm]
-            
-            \begin{tabular}{m{4cm}<{\raggedright} m{3cm}<{\centering} m{3cm}<{\centering}}
-                \zihao{3}{学科专业：}&\multicolumn{2}{c}{\zihao{3}{\Major}}\\[1.5em]
-                \zihao{3}{专业领域：}&\multicolumn{2}{c}{\zihao{3}{\Direction}}\\[1.5em]
-                \zihao{3}{作者姓名：}&\multicolumn{2}{c}{\zihao{3}{\Author}}\\[1.5em]
-                \zihao{3}{指导教师：}&\multicolumn{2}{c}{\zihao{3}{\Supervisor}}\\
-                
-            \end{tabular}
-            
-            \vspace{2cm}
-            \zihao{-3}{\CollegeName\\\DebateDate}
-            
-        \end{center}
-        
-    \end{titlepage}
-    \cleardoublepage
     \fi 
     \pagestyle{empty}
 }
+
 
 \makeatletter
 \newcommand\centerfloat{%
