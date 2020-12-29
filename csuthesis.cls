@@ -387,7 +387,7 @@ citecolor=myblue,
 
 \newenvironment{AbstractEn}{
     \chapter*{\bfseries\TitleEn}
-    \addcontentsline{toc}{chapter}{Abstract}
+    \addcontentsline{toc}{chapter}{\textbf{Abstract}}
     \noindent\zihao{4}{\bf{Abstract：}}
 }{
     \par\noindent{\bf{Classification：}}\Classification
