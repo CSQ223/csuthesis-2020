@@ -145,9 +145,8 @@ citecolor=myblue,
 \renewcommand{\theequation}{\thechapter--\arabic{equation}}
 \renewcommand{\thelisting}{\thechapter--\arabic{listing}}
 
-
 \newcommand{\tblref}[1]{\hypersetup{linkcolor=myblue}表~{\rm\ref{#1}}}
-\newcommand{\figref}[1]{\hypersetup{linkcolor=myblue}图~{\rm\ref{#1}}}
+\newcommand{\figref}[1]{图~{\rm\ref{#1}}}
 \newcommand{\algref}[1]{\hypersetup{linkcolor=myblue}算法~{\rm\ref{#1}}}
 \renewcommand{\eqref}[1]{\hypersetup{linkcolor=myblue}公式~{\rm(\ref{#1})}}
 \newcommand{\eqsref}[2]{\hypersetup{linkcolor=myblue}公式~{\rm(\ref{#1})}—公式{\rm(\ref{#2})}}
@@ -369,7 +368,9 @@ citecolor=myblue,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\sep{；}
 \newcommand{\KeywordsZh}[1]{
-    \par\noindent{\heiti{关键词：}}#1
+    \par\hangafter 1%
+    \hangindent 4em%
+    \noindent{\heiti{关键词：}}#1
 }
 
 \newenvironment{AbstractZh}{
@@ -377,12 +378,15 @@ citecolor=myblue,
     \addcontentsline{toc}{chapter}{摘要}
     \noindent\zihao{4}{\heiti{摘要：}}
 }{
-    \par\noindent{\heiti{分类号：}}\Classification
+    \par%
+    \noindent{\heiti{分类号：}}\Classification
     \cleardoublepage
 }
 
 \newcommand{\KeywordsEn}[1]{
-    \par\noindent{\bf{Keywords：}}#1
+    \par\hangafter 1%
+    \hangindent 5em%
+    \noindent{\bf{Keywords：}}#1
 }
 
 \newenvironment{AbstractEn}{
