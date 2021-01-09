@@ -180,9 +180,10 @@ citecolor=myblue,
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE,RO]{\zihao{-5} \CollegeName\ThesisType}
-\fancyhead[RE]{\zihao{-5}\rightmark}
-\fancyhead[LO]{\zihao{-5}\leftmark}
+\fancyhead[RO]{\zihao{-5}\leftmark}
+\fancyhead[LO]{\zihao{-5} \CollegeName\ThesisType}
+\fancyhead[RE]{\zihao{-5} \CollegeName\ThesisType}
+\fancyhead[LE]{\zihao{-5}\rightmark}
 \fancyfoot[C]{\zihao{-5}\thepage}
 \renewcommand{\headrulewidth}{0.5pt}
 %\renewcommand{\footrulewidth}{0.5pt}
