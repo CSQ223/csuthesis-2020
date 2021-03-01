@@ -30,7 +30,7 @@
 \csu@error{XeLaTeX is required to compile with "csuthesis.cls"}
 \fi
 
-\LoadClass[a4paper,zihao=-4]{ctexbook}
+\LoadClass[a4paper,zihao=-4]{ctexrep}
 
 \ctexset{
     chapter={
