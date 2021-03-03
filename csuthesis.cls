@@ -30,7 +30,7 @@
 \csu@error{XeLaTeX is required to compile with "csuthesis.cls"}
 \fi
 
-\LoadClass[a4paper,zihao=-4]{ctexrep}
+\LoadClass[a4paper,zihao=-4,twoside]{ctexrep}
 
 \ctexset{
     chapter={
@@ -381,7 +381,6 @@ citecolor=myblue,
 }{
     \par%
     \noindent{\heiti{分类号：}}\Classification
-    \cleardoublepage
 }
 
 \newcommand{\KeywordsEn}[1]{
@@ -396,5 +395,4 @@ citecolor=myblue,
     \noindent\zihao{4}{\bf{Abstract：}}
 }{
     \par\noindent{\bf{Classification：}}\Classification
-    \cleardoublepage
 }
